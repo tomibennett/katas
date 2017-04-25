@@ -69,5 +69,9 @@ RSpec.describe '#convert' do
     it 'converts 44 to XLIV' do
       expect(convert 44).to eq 'XLIV'
     end
+
+    it 'converts 1999 to MCMXCIX' do
+      expect(convert 1999).to eq 'MCMXCIX'
+    end
   end
 end

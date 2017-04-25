@@ -14,15 +14,13 @@ $numerals = {
   1 => 'I'
 }
 
-def correspondance number
-  $numerals.keys.find_all { |arabic| number >= arabic }.first
-end
-
-def convert number, roman_numeral = ''
-  if number > 0
-    a_number = correspondance number
-    convert(number - a_number, roman_numeral << $numerals[a_number])
-  else
-    roman_numeral
+def convert number
+  roman_numeral = ''
+  $numerals.each do |arabic, roman|
+    while number >= arabic
+      roman_numeral << roman
+      number -= arabic
+    end
   end
+  roman_numeral
 end
