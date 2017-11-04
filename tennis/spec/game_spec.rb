@@ -21,5 +21,9 @@ RSpec.describe Game do
     it 'has the fourth point set to "40"' do
       expect(described_class::POINTS[3]).to eq '40'
     end
+
+    it 'has the fifth point set to nothing' do
+      expect(described_class::POINTS[4]).to eq nil
+    end
   end
 end
