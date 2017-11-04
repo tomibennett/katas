@@ -1,6 +1,6 @@
 class Game
   SCORING_RULES = {
-    0 => '',
+    0 => 'love',
     1 => '',
     2 => '',
     3 => '',
