@@ -9,5 +9,9 @@ RSpec.describe Game do
     it 'has the first point set to "love"' do
       expect(described_class::POINTS[0]).to eq 'love'
     end
+
+    it 'has the second point set to "15"' do
+      expect(described_class::POINTS[1]).to eq '15'
+    end
   end
 end
