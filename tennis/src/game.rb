@@ -1,5 +1,5 @@
 class Game
-  SCORING_RULES = {
+  POINTS = {
     0 => 'love',
     1 => '',
     2 => '',
