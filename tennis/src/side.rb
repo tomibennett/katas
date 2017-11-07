@@ -3,6 +3,10 @@ class Side
     @points = 0
   end
   def points
-    0
+    @points
+  end
+
+  def score
+    @points += 1
   end
 end
