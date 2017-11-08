@@ -19,26 +19,17 @@ RSpec.describe PointsStream do
   end
 
   describe '#get_point' do
-    context 'at the start of the game' do
-      let(:points) { '010101' }
-      let(:points_stream) { described_class.from_buffer points }
+    let(:points) { '010101' }
+    let(:points_stream) { described_class.from_buffer points }
 
-      it 'returns the first point at the start of the game' do
-        expect(points_stream.get_point).to eq points[0]
-      end
-    end
+    it 'retrieves one by one all points' do
+      retrieved_points = ''
 
-    context 'at the second round of the game' do
-      let(:points) { '010101' }
-      let(:points_stream) { described_class.from_buffer points }
-
-      before do
-        points_stream.get_point
+      while points_stream.continue? do
+        retrieved_points << points_stream.get_point
       end
 
-      it 'returns the second point' do
-        expect(points_stream.get_point).to eq points[1]
-      end
+      expect(retrieved_points).to eq points
     end
   end
 end
