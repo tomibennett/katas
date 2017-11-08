@@ -1,6 +1,7 @@
 class PointsStream
   def initialize points
-    @points = points
+    @points_buffer = points
+    @points_buffer_length = @points_buffer.length
     @current_point_index = 0
   end
 
@@ -13,9 +14,11 @@ class PointsStream
   end
 
   def get_point
-    point = @points[@current_point_index]
-
     @current_point_index += 1
-    point
+    @points_buffer[@current_point_index - 1]
+  end
+
+  def continue?
+    @current_point_index < @points_buffer_length
   end
 end
