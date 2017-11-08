@@ -8,4 +8,13 @@ RSpec.describe PointsStream do
       end
     end
   end
+
+  describe '#register_judge' do
+    let(:points_stream) { described_class.from_buffer '' }
+    let(:judge) { Judge.new }
+
+    it 'registers a judge that will announce points' do
+      expect(points_stream.register_judge judge).to eq judge
+    end
+  end
 end
