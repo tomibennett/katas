@@ -1,12 +1,12 @@
 require_relative '../src/judge'
 
 RSpec.describe Judge do
-  let(:game_stream) { GameStream.from_buffer '01' }
+  let(:points_stream) { PointsStream.from_buffer '01' }
 
   describe '#subscribes' do
     let(:judge) { described_class.new }
-    it 'subscribes to a game stream' do
-      expect(judge.subscribes game_stream).to eq game_stream
+    it 'subscribes to a points stream' do
+      expect(judge.subscribes points_stream).to eq points_stream
     end
   end
 
@@ -14,7 +14,7 @@ RSpec.describe Judge do
     let(:judge) { described_class.new }
 
     before do
-      judge.subscribes game_stream
+      judge.subscribes points_stream
     end
 
     it 'retrieves a point won by a side' do

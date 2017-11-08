@@ -1,8 +1,8 @@
-require_relative './game_stream'
+require_relative './points_stream'
 
 class Judge
-  def subscribes(game_stream)
-    @game_stream = game_stream
+  def subscribes(points_stream)
+    @points_stream = points_stream
   end
 
   def next_point

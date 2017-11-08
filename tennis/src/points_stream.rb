@@ -1,9 +1,9 @@
-class GameStream
+class PointsStream
   def initialize points
     @points = points
   end
 
   def self.from_buffer points
-    GameStream.new points
+    PointsStream.new points
   end
 end
