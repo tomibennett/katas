@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
+
+# Added at 2017-11-16 17:11:15 +0100 by tom:
+gem "puma", "~> 3.10"
+
+# Added at 2017-11-16 17:11:28 +0100 by tom:
+gem "sinatra", "~> 2.0"
